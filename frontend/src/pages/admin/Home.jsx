@@ -1,36 +1,39 @@
-import { Bed, User2, CalendarCheck, Package } from "lucide-react";
+import { Bed, User2, CalendarCheck, Package } from 'lucide-react';
 
 const Home = () => {
+  const savedUser = localStorage.getItem('user');
+  const user = savedUser ? JSON.parse(savedUser) : null;
+
   const cards = [
     {
-      title: "Total Pasien",
+      title: 'Total Pasien',
       value: 1220,
       details: [
-        { label: "Total pasien", value: 21 },
-        { label: "30 Hari Terakhir", value: 231 },
+        { label: 'Total pasien', value: 21 },
+        { label: '30 Hari Terakhir', value: 231 },
       ],
       icon: <Bed className="text-blue-600" size={36} />,
     },
     {
-      title: "Total Dokter",
+      title: 'Total Dokter',
       value: 21,
       details: [
-        { label: "Spesialis", value: 21 },
-        { label: "Umum", value: 21 },
+        { label: 'Spesialis', value: 21 },
+        { label: 'Umum', value: 21 },
       ],
       icon: <User2 className="text-blue-600" size={36} />,
     },
     {
-      title: "Total Janji",
+      title: 'Total Janji',
       value: 1220,
       details: [
-        { label: "Registrasi Hari Ini", value: 21 },
-        { label: "Last 30 days", value: 231 },
+        { label: 'Registrasi Hari Ini', value: 21 },
+        { label: 'Last 30 days', value: 231 },
       ],
       icon: <CalendarCheck className="text-blue-600" size={36} />,
     },
     {
-      title: "Stok Obat",
+      title: 'Stok Obat',
       value: 67,
       details: [],
       icon: <Package className="text-blue-600" size={36} />,
@@ -44,8 +47,10 @@ const Home = () => {
         <div className="flex items-center gap-3 bg-white p-3 rounded-xl shadow-sm">
           <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
           <div>
-            <p className="font-semibold text-gray-700">Nabila Huwaida</p>
-            <p className="text-sm text-gray-500">Admin</p>
+            <a href="logout">
+              <p className="font-semibold text-gray-700">{user ? user.name : 'Memuat...'}</p>
+            </a>
+            <p className="text-sm text-gray-500">{user ? user.role : 'Memuat...'}</p>
           </div>
         </div>
       </div>

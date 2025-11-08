@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images.png";
 
+
 const Navbar = () => {
     const [isExpanded, setIsExpanded] = useState(true);
     const location = useLocation();

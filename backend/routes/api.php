@@ -10,6 +10,4 @@ Route::middleware(['jwt.auth'])->group(function () {
     Route::get('/me', [AuthController::class, 'getMe']);
     Route::post('/logout', [AuthController::class, 'logoutUsers']);
     Route::post('/refresh', [AuthController::class, 'refreshToken']);
-
-    
 });

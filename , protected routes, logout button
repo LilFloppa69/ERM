@@ -1,0 +1,549 @@
+[1mdiff --git a/.editorconfig b/.editorconfig[m
+[1mdeleted file mode 100644[m
+[1mindex a186cd2..0000000[m
+[1m--- a/.editorconfig[m
+[1m+++ /dev/null[m
+[36m@@ -1,18 +0,0 @@[m
+[31m-root = true[m
+[31m-[m
+[31m-[*][m
+[31m-charset = utf-8[m
+[31m-end_of_line = lf[m
+[31m-indent_size = 4[m
+[31m-indent_style = space[m
+[31m-insert_final_newline = true[m
+[31m-trim_trailing_whitespace = true[m
+[31m-[m
+[31m-[*.md][m
+[31m-trim_trailing_whitespace = false[m
+[31m-[m
+[31m-[*.{yml,yaml}][m
+[31m-indent_size = 2[m
+[31m-[m
+[31m-[compose.yaml][m
+[31m-indent_size = 4[m
+[1mdiff --git a/.env.example b/.env.example[m
+[1mdeleted file mode 100644[m
+[1mindex c0660ea..0000000[m
+[1m--- a/.env.example[m
+[1m+++ /dev/null[m
+[36m@@ -1,65 +0,0 @@[m
+[31m-APP_NAME=Laravel[m
+[31m-APP_ENV=local[m
+[31m-APP_KEY=[m
+[31m-APP_DEBUG=true[m
+[31m-APP_URL=http://localhost[m
+[31m-[m
+[31m-APP_LOCALE=en[m
+[31m-APP_FALLBACK_LOCALE=en[m
+[31m-APP_FAKER_LOCALE=en_US[m
+[31m-[m
+[31m-APP_MAINTENANCE_DRIVER=file[m
+[31m-# APP_MAINTENANCE_STORE=database[m
+[31m-[m
+[31m-# PHP_CLI_SERVER_WORKERS=4[m
+[31m-[m
+[31m-BCRYPT_ROUNDS=12[m
+[31m-[m
+[31m-LOG_CHANNEL=stack[m
+[31m-LOG_STACK=single[m
+[31m-LOG_DEPRECATIONS_CHANNEL=null[m
+[31m-LOG_LEVEL=debug[m
+[31m-[m
+[31m-DB_CONNECTION=sqlite[m
+[31m-# DB_HOST=127.0.0.1[m
+[31m-# DB_PORT=3306[m
+[31m-# DB_DATABASE=laravel[m
+[31m-# DB_USERNAME=root[m
+[31m-# DB_PASSWORD=[m
+[31m-[m
+[31m-SESSION_DRIVER=database[m
+[31m-SESSION_LIFETIME=120[m
+[31m-SESSION_ENCRYPT=false[m
+[31m-SESSION_PATH=/[m
+[31m-SESSION_DOMAIN=null[m
+[31m-[m
+[31m-BROADCAST_CONNECTION=log[m
+[31m-FILESYSTEM_DISK=local[m
+[31m-QUEUE_CONNECTION=database[m
+[31m-[m
+[31m-CACHE_STORE=database[m
+[31m-# CACHE_PREFIX=[m
+[31m-[m
+[31m-MEMCACHED_HOST=127.0.0.1[m
+[31m-[m
+[31m-REDIS_CLIENT=phpredis[m
+[31m-REDIS_HOST=127.0.0.1[m
+[31m-REDIS_PASSWORD=null[m
+[31m-REDIS_PORT=6379[m
+[31m-[m
+[31m-MAIL_MAILER=log[m
+[31m-MAIL_SCHEME=null[m
+[31m-MAIL_HOST=127.0.0.1[m
+[31m-MAIL_PORT=2525[m
+[31m-MAIL_USERNAME=null[m
+[31m-MAIL_PASSWORD=null[m
+[31m-MAIL_FROM_ADDRESS="hello@example.com"[m
+[31m-MAIL_FROM_NAME="${APP_NAME}"[m
+[31m-[m
+[31m-AWS_ACCESS_KEY_ID=[m
+[31m-AWS_SECRET_ACCESS_KEY=[m
+[31m-AWS_DEFAULT_REGION=us-east-1[m
+[31m-AWS_BUCKET=[m
+[31m-AWS_USE_PATH_STYLE_ENDPOINT=false[m
+[31m-[m
+[31m-VITE_APP_NAME="${APP_NAME}"[m
+[1mdiff --git a/.gitattributes b/.gitattributes[m
+[1mdeleted file mode 100644[m
+[1mindex fcb21d3..0000000[m
+[1m--- a/.gitattributes[m
+[1m+++ /dev/null[m
+[36m@@ -1,11 +0,0 @@[m
+[31m-* text=auto eol=lf[m
+[31m-[m
+[31m-*.blade.php diff=html[m
+[31m-*.css diff=css[m
+[31m-*.html diff=html[m
+[31m-*.md diff=markdown[m
+[31m-*.php diff=php[m
+[31m-[m
+[31m-/.github export-ignore[m
+[31m-CHANGELOG.md export-ignore[m
+[31m-.styleci.yml export-ignore[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mdeleted file mode 100644[m
+[1mindex b71b1ea..0000000[m
+[1m--- a/.gitignore[m
+[1m+++ /dev/null[m
+[36m@@ -1,24 +0,0 @@[m
+[31m-*.log[m
+[31m-.DS_Store[m
+[31m-.env[m
+[31m-.env.backup[m
+[31m-.env.production[m
+[31m-.phpactor.json[m
+[31m-.phpunit.result.cache[m
+[31m-/.fleet[m
+[31m-/.idea[m
+[31m-/.nova[m
+[31m-/.phpunit.cache[m
+[31m-/.vscode[m
+[31m-/.zed[m
+[31m-/auth.json[m
+[31m-/node_modules[m
+[31m-/public/build[m
+[31m-/public/hot[m
+[31m-/public/storage[m
+[31m-/storage/*.key[m
+[31m-/storage/pail[m
+[31m-/vendor[m
+[31m-Homestead.json[m
+[31m-Homestead.yaml[m
+[31m-Thumbs.db[m
+[1mdiff --git a/README.md b/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex 0165a77..0000000[m
+[1m--- a/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,59 +0,0 @@[m
+[31m-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>[m
+[31m-[m
+[31m-<p align="center">[m
+[31m-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>[m
+[31m-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>[m
+[31m-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>[m
+[31m-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>[m
+[31m-</p>[m
+[31m-[m
+[31m-## About Laravel[m
+[31m-[m
+[31m-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:[m
+[31m-[m
+[31m-- [Simple, fast routing engine](https://laravel.com/docs/routing).[m
+[31m-- [Powerful dependency injection container](https://laravel.com/docs/container).[m
+[31m-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.[m
+[31m-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).[m
+[31m-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).[m
+[31m-- [Robust background job processing](https://laravel.com/docs/queues).[m
+[31m-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).[m
+[31m-[m
+[31m-Laravel is accessible, powerful, and provides tools required for large, robust applications.[m
+[31m-[m
+[31m-## Learning Laravel[m
+[31m-[m
+[31m-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.[m
+[31m-[m
+[31m-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.[m
+[31m-[m
+[31m-## Laravel Sponsors[m
+[31m-[m
+[31m-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).[m
+[31m-[m
+[31m-### Premium Partners[m
+[31m-[m
+[31m-- **[Vehikl](https://vehikl.com)**[m
+[31m-- **[Tighten Co.](https://tighten.co)**[m
+[31m-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**[m
+[31m-- **[64 Robots](https://64robots.com)**[m
+[31m-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**[m
+[31m-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**[m
+[31m-- **[Redberry](https://redberry.international/laravel-development)**[m
+[31m-- **[Active Logic](https://activelogic.com)**[m
+[31m-[m
+[31m-## Contributing[m
+[31m-[m
+[31m-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).[m
+[31m-[m
+[31m-## Code of Conduct[m
+[31m-[m
+[31m-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).[m
+[31m-[m
+[31m-## Security Vulnerabilities[m
+[31m-[m
+[31m-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.[m
+[31m-[m
+[31m-## License[m
+[31m-[m
+[31m-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).[m
+[1mdiff --git a/app/Http/Controllers/AuthController.php b/app/Http/Controllers/AuthController.php[m
+[1mdeleted file mode 100644[m
+[1mindex 7a0de7c..0000000[m
+[1m--- a/app/Http/Controllers/AuthController.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,107 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Controllers;[m
+[31m-[m
+[31m-use App\Http\Controllers\Controller;[m
+[31m-use Illuminate\Http\Request;[m
+[31m-use Illuminate\Support\Facades\Hash;[m
+[31m-use Illuminate\Support\Str;[m
+[31m-use App\Models\User;[m
+[31m-use Illuminate\Validation\ValidationException;[m
+[31m-use Tymon\JWTAuth\Facades\JWTAuth;[m
+[31m-[m
+[31m-class AuthController extends Controller[m
+[31m-{[m
+[31m-[m
+[31m-    // LOGIN  [m
+[31m-    public function loginUser(Request $request)[m
+[31m-    {[m
+[31m-        $credentials = $request->validate([[m
+[31m-            'email'    => 'required|email',[m
+[31m-            'password' => 'required'[m
+[31m-        ]);[m
+[31m-[m
+[31m-        // Use JWTAuth facade to create token (avoids Guard::attempt undefined error)[m
+[31m-        if (! $token = JWTAuth::attempt($credentials)) {[m
+[31m-            return response()->json(['message' => 'Email atau password salah'], 401);[m
+[31m-        }[m
+[31m-[m
+[31m-        return $this->respondWithToken($token);[m
+[31m-    }[m
+[31m-[m
+[31m-    // REGISTER  [m
+[31m-    public function registerUser(Request $request)[m
+[31m-    {[m
+[31m-        try {[m
+[31m-            $validated = $request->validate([[m
+[31m-                'name'     => 'required|string|max:255',[m
+[31m-                'email'    => 'required|string|email|max:255|unique:users,email',[m
+[31m-                'password' => 'required|string|min:6',[m
+[31m-                'username' => 'sometimes|string|max:50|unique:users,username',[m
+[31m-                'role'     => 'required|string|in:admin,doctor,patient',[m
+[31m-                'phone'    => 'sometimes|string|max:20',[m
+[31m-            ]);[m
+[31m-[m
+[31m-            $userCode = Str::random(10);[m
+[31m-            $user = User::create([[m
+[31m-                'name'     => $validated['name'],[m
+[31m-                'email'    => $validated['email'],[m
+[31m-                'password' => Hash::make($validated['password']),[m
+[31m-                'role'     => $validated['role'],[m
+[31m-                'username' => $validated['username'] ?? null,[m
+[31m-                'phone'    => $validated['phone'] ?? null,[m
+[31m-            ]);[m
+[31m-[m
+[31m-            $token = JWTAuth::fromUser($user);[m
+[31m-[m
+[31m-            return response()->json([[m
+[31m-                'message' => 'User registered successfully',[m
+[31m-                'token'   => $token,[m
+[31m-                'token_type' => 'bearer',[m
+[31m-                'expires_in' => JWTAuth::factory()->getTTL() * 60,[m
+[31m-            ], 201);[m
+[31m-        } catch (ValidationException $e) {[m
+[31m-            return response()->json(['message' => 'Validation failed','errors' => $e->errors()], 422);[m
+[31m-        } catch (\Exception $e) {[m
+[31m-            return response()->json(['message' => 'Terjadi kesalahan pada server.','error' => $e->getMessage()], 500);[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    // GET ME[m
+[31m-    public function getMe(Request $request)[m
+[31m-    {[m
+[31m-        return response()->json([[m
+[31m-            'code' => 200,[m
+[31m-            'message' => 'User ditemukan',[m
+[31m-            'data' => auth('api')->user(),[m
+[31m-        ]);[m
+[31m-    }[m
+[31m-[m
+[31m-    // LOGOUT (invalidate token)[m
+[31m-    public function logoutUsers(Request $request)[m
+[31m-    {[m
+[31m-        try {[m
+[31m-            JWTAuth::invalidate(JWTAuth::getToken());[m
+[31m-            return response()->json(['code' => 200,'message' => 'Logged out successfully'], 200);[m
+[31m-        } catch (\Exception $e) {[m
+[31m-            return response()->json(['code' => 500, 'message' => 'Logout failed', 'error' => $e->getMessage()], 500);[m
+[31m-        }[m
+[31m-    }[m
+[31m-[m
+[31m-    // REFRESH TOKEN[m
+[31m-    public function refreshToken(Request $request)[m
+[31m-    {[m
+[31m-        $newToken = JWTAuth::refresh(JWTAuth::getToken());[m
+[31m-        return $this->respondWithToken($newToken);[m
+[31m-    }[m
+[31m-[m
+[31m-    private function respondWithToken($token)[m
+[31m-    {[m
+[31m-        return response()->json([[m
+[31m-            'code'       => 200,[m
+[31m-            'token'      => $token,[m
+[31m-            'token_type' => 'bearer',[m
+[31m-            'expires_in' => JWTAuth::factory()->getTTL() * 60,[m
+[31m-        ]);[m
+[31m-    }[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/app/Http/Controllers/Controller.php b/app/Http/Controllers/Controller.php[m
+[1mdeleted file mode 100644[m
+[1mindex 8677cd5..0000000[m
+[1m--- a/app/Http/Controllers/Controller.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,8 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Http\Controllers;[m
+[31m-[m
+[31m-abstract class Controller[m
+[31m-{[m
+[31m-    //[m
+[31m-}[m
+[1mdiff --git a/app/Models/User.php b/app/Models/User.php[m
+[1mdeleted file mode 100644[m
+[1mindex 9bb76be..0000000[m
+[1m--- a/app/Models/User.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,72 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Models;[m
+[31m-[m
+[31m-// use Illuminate\Contracts\Auth\MustVerifyEmail;[m
+[31m-use Illuminate\Database\Eloquent\Factories\HasFactory;[m
+[31m-use Illuminate\Foundation\Auth\User as Authenticatable;[m
+[31m-use Illuminate\Notifications\Notifiable;[m
+[31m-use Tymon\JWTAuth\Contracts\JWTSubject;[m
+[31m-[m
+[31m-class User extends Authenticatable implements JWTSubject    [m
+[31m-{[m
+[31m-    /** @use HasFactory<\Database\Factories\UserFactory> */[m
+[31m-    use HasFactory, Notifiable;[m
+[31m-[m
+[31m-    /**[m
+[31m-     * The attributes that are mass assignable.[m
+[31m-     *[m
+[31m-     * @var list<string>[m
+[31m-     */[m
+[31m-    protected $fillable = [[m
+[31m-        'name',[m
+[31m-        'email',[m
+[31m-        'password',[m
+[31m-        'role',[m
+[31m-        'username',[m
+[31m-        'phone',[m
+[31m-    ];[m
+[31m-[m
+[31m-    /**[m
+[31m-     * The attributes that should be hidden for serialization.[m
+[31m-     *[m
+[31m-     * @var list<string>[m
+[31m-     */[m
+[31m-    protected $hidden = [[m
+[31m-        'password',[m
+[31m-        'remember_token',[m
+[31m-    ];[m
+[31m-[m
+[31m-    /**[m
+[31m-     * Get the attributes that should be cast.[m
+[31m-     *[m
+[31m-     * @return array<string, string>[m
+[31m-     */[m
+[31m-    protected function casts(): array[m
+[31m-    {[m
+[31m-        return [[m
+[31m-            'email_verified_at' => 'datetime',[m
+[31m-            'password' => 'hashed',[m
+[31m-        ];[m
+[31m-    }[m
+[31m-[m
+[31m-    /**[m
+[31m-     * Get the identifier that will be stored in the subject claim of the JWT.[m
+[31m-     *[m
+[31m-     * @return mixed[m
+[31m-     */[m
+[31m-    public function getJWTIdentifier()[m
+[31m-    {[m
+[31m-        return $this->getKey();[m
+[31m-    }[m
+[31m-[m
+[31m-    /**[m
+[31m-     * Return a key value array, containing any custom claims to be added to the JWT.[m
+[31m-     *[m
+[31m-     * @return array[m
+[31m-     */[m
+[31m-    public function getJWTCustomClaims()[m
+[31m-    {[m
+[31m-        return [];[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/app/Providers/AppServiceProvider.php b/app/Providers/AppServiceProvider.php[m
+[1mdeleted file mode 100644[m
+[1mindex 452e6b6..0000000[m
+[1m--- a/app/Providers/AppServiceProvider.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,24 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-namespace App\Providers;[m
+[31m-[m
+[31m-use Illuminate\Support\ServiceProvider;[m
+[31m-[m
+[31m-class AppServiceProvider extends ServiceProvider[m
+[31m-{[m
+[31m-    /**[m
+[31m-     * Register any application services.[m
+[31m-     */[m
+[31m-    public function register(): void[m
+[31m-    {[m
+[31m-        //[m
+[31m-    }[m
+[31m-[m
+[31m-    /**[m
+[31m-     * Bootstrap any application services.[m
+[31m-     */[m
+[31m-    public function boot(): void[m
+[31m-    {[m
+[31m-        //[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/artisan b/artisan[m
+[1mdeleted file mode 100644[m
+[1mindex c35e31d..0000000[m
+[1m--- a/artisan[m
+[1m+++ /dev/null[m
+[36m@@ -1,18 +0,0 @@[m
+[31m-#!/usr/bin/env php[m
+[31m-<?php[m
+[31m-[m
+[31m-use Illuminate\Foundation\Application;[m
+[31m-use Symfony\Component\Console\Input\ArgvInput;[m
+[31m-[m
+[31m-define('LARAVEL_START', microtime(true));[m
+[31m-[m
+[31m-// Register the Composer autoloader...[m
+[31m-require __DIR__.'/vendor/autoload.php';[m
+[31m-[m
+[31m-// Bootstrap Laravel and handle the command...[m
+[31m-/** @var Application $app */[m
+[31m-$app = require_once __DIR__.'/bootstrap/app.php';[m
+[31m-[m
+[31m-$status = $app->handleCommand(new ArgvInput);[m
+[31m-[m
+[31m-exit($status);[m
+[1mdiff --git a/bootstrap/app.php b/bootstrap/app.php[m
+[1mdeleted file mode 100644[m
+[1mindex 2cd87b9..0000000[m
+[1m--- a/bootstrap/app.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,25 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-use Illuminate\Foundation\Application;[m
+[31m-use Illuminate\Foundation\Configuration\Exceptions;[m
+[31m-use Illuminate\Foundation\Configuration\Middleware;[m
+[31m-use Tymon\JWTAuth\Http\Middleware\Authenticate as JwtAuthenticate;[m
+[31m-use Tymon\JWTAuth\Http\Middleware\RefreshToken as JwtRefresh;[m
+[31m-[m
+[31m-return Application::configure(basePath: dirname(__DIR__))[m
+[31m-    ->withRouting([m
+[31m-        web: __DIR__.'/../routes/web.php',[m
+[31m-        api: __DIR__.'/../routes/api.php',[m
+[31m-        commands: __DIR__.'/../routes/console.php',[m
+[31m-        health: '/up',[m
+[31m-    )[m
+[31m-    ->withMiddleware(function (Middleware $middleware): void {[m
+[31m-        $middleware->validateCsrfTokens(except: ['api/*']);[m
+[31m-        $middleware->alias([[m
+[31m-            'jwt.auth' => JwtAuthenticate::class,[m
+[31m-            'jwt.refresh' => JwtRefresh::class,[m
+[31m-]);[m
+[31m-    })[m
+[31m-    ->withExceptions(function (Exceptions $exceptions): void {[m
+[31m-        //[m
+[31m-    })->create();[m
+[1mdiff --git a/bootstrap/cache/.gitignore b/bootstrap/cache/.gitignore[m
+[1mdeleted file mode 100644[m
+[1mindex d6b7ef3..0000000[m
+[1m--- a/bootstrap/cache/.gitignore[m
+[1m+++ /dev/null[m
+[36m@@ -1,2 +0,0 @@[m
+[31m-*[m
+[31m-!.gitignore[m
+[1mdiff --git a/bootstrap/providers.php b/bootstrap/providers.php[m
+[1mdeleted file mode 100644[m
+[1mindex 38b258d..0000000[m
+[1m--- a/bootstrap/providers.php[m
+[1m+++ /dev/null[m
+[36m@@ -1,5 +0,0 @@[m
+[31m-<?php[m
+[31m-[m
+[31m-return [[m
+[31m-    App\Providers\AppServiceProvider::class,[m
+[31m-];[m
+[1mdiff --git a/composer.json b/composer.json[m
+[1mdeleted file mode 100644[m
+[1mindex 0b41424..0000000[m
+[1m--- a/composer.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,88 +0,0 @@[m
+[31m-{[m
+[31m-    "$schema": "https://getcomposer.org/schema.json",[m
+[31m-    "name": "laravel/laravel",[m
+[31m-    "type": "project",[m
+[31m-    "description": "The skeleton application for the Laravel framework.",[m
+[31m-    "keywords": ["laravel", "framework"],[m
+[31m-    "license": "MIT",[m
+[31m-    "require": {[m
+[31m-        "php": "^8.2",[m
+[31m-        "laravel/framework": "^12.0",[m
+[31m-        "laravel/sanctum": "^4.2",[m
+[31m-        "laravel/tinker": "^2.10.1",[m
+[31m-        "tymon/jwt-auth": "^2.2"[m
+[31m-    },[m
+[31m-    "require-dev": {[m
+[31m-        "fakerphp/faker": "^1.23",[m
+[31m-        "laravel/pail": "^1.2.2",[m
+[31m-        "laravel/pint": "^1.24",[m
+[31m-        "laravel/sail": "^1.41",[m
+[31m-        "mockery/mockery": "^1.6",[m
+[31m-        "nunomaduro/collision": "^8.6",[m
+[31m-        "phpunit/phpunit": "^11.5.3"[m
+[31m-    },[m
+[31m-    "autoload": {[m
+[31m-        "psr-4": {[m
+[31m-            "App\\": "app/",[
